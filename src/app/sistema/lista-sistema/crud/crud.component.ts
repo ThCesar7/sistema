@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './crud.component.html',
   styleUrls: ['./crud.component.scss']
 })
-export class CrudComponent implements OnInit {
+export class CrudComponent {
 
-  constructor() { }
+  valor!: number;
+  destino!: number;
 
-  ngOnInit(): void {
+  transferir() {
   }
 
 }
