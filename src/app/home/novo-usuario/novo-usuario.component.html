@@ -1,7 +1,7 @@
 <div class="container">
-    <form class="form mt-4 login-form" 
+    <form class="form mt-4 login-form"
     [formGroup]="novoUsuarioForm"
-    (submit)="cadastrar">
+    (submit)="cadastrar()">
         <div class="login">
             <h3>Registre-se</h3>
         </div>
@@ -11,7 +11,7 @@
             formControlName="fullName">
         </div>
         <app-mensagem *ngIf="
-        novoUsuarioForm.get('fullName')?.errors?.['required'] && 
+        novoUsuarioForm.get('fullName')?.errors?.['required'] &&
         novoUsuarioForm.get('fullName')?.touched"
         mensagem="Nome obrigatório"></app-mensagem>
         <div class="form-group">
@@ -20,11 +20,11 @@
             formControlName="email">
         </div>
         <app-mensagem *ngIf="
-        novoUsuarioForm.get('email')?.errors?.['required'] && 
+        novoUsuarioForm.get('email')?.errors?.['required'] &&
         novoUsuarioForm.get('email')?.touched"
         mensagem="E-mail obrigatório"></app-mensagem>
         <app-mensagem *ngIf="
-        novoUsuarioForm.get('email')?.errors?.['email'] && 
+        novoUsuarioForm.get('email')?.errors?.['email'] &&
         novoUsuarioForm.get('email')?.touched"
         mensagem="E-mail formato incorreto"></app-mensagem>
         <div class="form-group">
@@ -32,7 +32,7 @@
             class="text-center form-control"
             formControlName="userName">
             <app-mensagem *ngIf="
-        novoUsuarioForm.get('userName')?.errors?.['required'] && 
+        novoUsuarioForm.get('userName')?.errors?.['required'] &&
         novoUsuarioForm.get('userName')?.touched"
         mensagem="Nome obrigatório"></app-mensagem>
         </div>
@@ -42,7 +42,7 @@
             class="text-center form-control"
             formControlName="password">
             <app-mensagem *ngIf="
-        novoUsuarioForm.get('password')?.errors?.['required'] && 
+        novoUsuarioForm.get('password')?.errors?.['required'] &&
         novoUsuarioForm.get('password')?.touched"
         mensagem="Nome obrigatório"></app-mensagem>
         </div><br>

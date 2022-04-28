@@ -5,13 +5,16 @@
         </div>
 
         <div class="form-group">
-            <input placeholder="Nome"
+            <input #usarNameInput
+            placeholder="Nome"
             formControlName="userName"
              name="usuario"
              type="text"
             class="text-center form-control"
             autofocus>
-            <small *ngIf="Form.get('userName')?.errors" class="text-danger d-block mt-2">Nome obrigatório</small>
+            <app-mensagem *ngIf="Form.get('userName')?.errors?.['required'] &&
+            Form.get('userName')?.touched"
+            mensagem="Nome obrigatório"></app-mensagem>
         </div>
 
         <div class="form-group">
@@ -22,7 +25,8 @@
             class="text-center form-control"
             autofocus
             >
-            <small *ngIf="Form.get('password')?.errors" class="text-danger d-block mt-2">Senha obrigatória</small>
+            <app-mensagem *ngIf="Form.get('password')?.errors?.['required'] && Form.get('password')?.touched"
+            mensagem="Senha obrigatória"></app-mensagem>
         </div><br>
 
         <button type="submit" class="btn"

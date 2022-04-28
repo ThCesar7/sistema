@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
+import { AutenticacaoService } from 'src/app/autenticacao/auth/autenticacao.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +11,7 @@ import { AutenticacaoService } from 'src/app/autenticacao/autenticacao.service';
 export class LoginComponent implements OnInit {
 
   Form!: FormGroup;
+  @ViewChild('usarNameInput') userNameInput!: ElementRef<HTMLInputElement>;
 
   constructor(private authService: AutenticacaoService,
     private router: Router,
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
      console.log(err)
      alert('Usuário ou senha inválido');
      this.Form.reset()
+     this.userNameInput.nativeElement.focus();
    }
    )
   }
