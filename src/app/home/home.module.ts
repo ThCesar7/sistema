@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -20,7 +21,8 @@ import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
     HomeRoutingModule,
     FormsModule,
     MensagemModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [HomeComponent]
 })
