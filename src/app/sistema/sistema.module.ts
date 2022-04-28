@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,12 +11,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { CrudComponent } from './lista-sistema/crud/crud.component';
 
 
 @NgModule({
   declarations: [
     ListaSistemaComponent,
-    RootNavComponent
+    RootNavComponent,
+    CrudComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatListModule,
     FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SistemaModule { }
