@@ -1,6 +1,5 @@
 .centralizar{
-  margin-top: 70%;
-  margin-left: 35%;
+  margin-top: 10%;
 }
 
 .container{
@@ -9,5 +8,12 @@
   border-radius: 30px;
   background-color: rgb(255, 255, 255);
   text-align: center;
+  border: 2px solid black;
+}
+
+.titulo {
+  margin-top: 20px;
+  color: black;
+  font-size: 1.5rem;
 }
 

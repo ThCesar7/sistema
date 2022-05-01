@@ -1,17 +1,16 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-crud',
-  templateUrl: './crud.component.html',
-  styleUrls: ['./crud.component.scss'],
+  selector: 'app-transferencias',
+  templateUrl: './transferencias.component.html',
+  styleUrls: ['./transferencias.component.scss']
 })
-export class CrudComponent {
+export class TransferenciasComponent  {
 
   @Output() aoTransferir = new EventEmitter<any>();
 
-  valorInput!: string;
+  valorInput!: number;
   destinoInput!: number;
-  salarioInput!: number;
 
   transferir() {
     const valorEmitir = { valor: this.valorInput, destino: this.destinoInput };
@@ -20,8 +19,8 @@ export class CrudComponent {
   }
 
   limparCampo() {
-    this.valorInput = '';
+    this.valorInput = 0;
     this.destinoInput = 0;
-    this.salarioInput = 0;
   }
+
 }

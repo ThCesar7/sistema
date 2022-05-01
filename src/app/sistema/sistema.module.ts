@@ -12,13 +12,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { CrudComponent } from './lista-sistema/crud/crud.component';
+import { TransferenciasComponent } from './lista-sistema/transferencias/transferencias.component';
+import { ExtratoComponent } from './lista-sistema/extrato/extrato.component';
 
 
 @NgModule({
   declarations: [
     ListaSistemaComponent,
     RootNavComponent,
-    CrudComponent
+    CrudComponent,
+    TransferenciasComponent,
+    ExtratoComponent
   ],
   imports: [
     CommonModule,

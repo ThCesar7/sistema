@@ -1,16 +1,19 @@
 <div class="centralizar">
   <section class="container">
     <form class="formulario" (ngSubmit)="transferir()">
-      <p class="titulo">Nova Transferência</p>
+      <p class="titulo">Novo Funcionário</p>
 
       <div class="form-field">
-        <label class="form-field__label" for="valor">Valor</label>
+        <label class="form-field__label" for="valor">Nome</label>
         <input class="form-field__input" id="valor" type="text" name="valor" [(ngModel)]="valorInput">
 
-        <label class="form-field__label" for="destino">Destino</label>
+        <label class="form-field__label" for="destino">Cargo</label>
         <input class="form-field__input" id="destino" type="text" name="destino" [(ngModel)]="destinoInput"/>
 
-        <button class="btn btn-dark" type="submit">Transferir</button>
+        <label class="form-field__label" for="destino">Salário</label>
+        <input class="form-field__input" id="destino" type="text" name="destino" [(ngModel)]="salarioInput"/>
+
+        <button class="btn btn-dark" type="submit">Incluir</button>
       </div>
     </form>
 
@@ -18,15 +21,24 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Valor</th>
-          <th scope="col">Destino</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Cargo</th>
+          <th scope="col">Salário</th>
+          <th scope="col">Ação</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td >{{valorInput}}</td>
-          <td>{{destinoInput}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <span class="float-right">
+              <button class="btn btn-outline-warning mb-1 btn-sm">Atualizar</button>
+              <button class="btn btn-outline-danger mb-1 btn-sm">Remover</button>
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>

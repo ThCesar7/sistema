@@ -1,17 +1,18 @@
-.sidenav-container {
+.example-container {
+  width: 100%;
   height: 100%;
-  right: 16px;
+  background-color: transparent;
 }
 
-.sidenav {
-  width: 140px;
-  background: #212121 !important;
-  border: #212121 1px solid;
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+.example-sidenav {
+  background-color: black;
+  width: 150px;
 }
 

@@ -1,17 +1,14 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Sistemas</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer  class="example-sidenav" mode="side" opened>
     <mat-nav-list>
       <a mat-list-item [routerLink]="['app-grafico']">Grafico</a>
-      <a mat-list-item [routerLink]="['app-crud']">Transferências</a>
-      <a mat-list-item [routerLink]="['app-modulo']">Módulo</a>
+      <a mat-list-item [routerLink]="['app-transferencias']">Transferências</a>
+      <a mat-list-item [routerLink]="['app-extrato']">Extrato</a>
+      <a mat-list-item [routerLink]="['app-crud']">Funcionários</a>
     </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
-<ng-content></ng-content>
+    <!--  -->
+  </mat-drawer>
+  <ng-content>
+  </ng-content>
+</mat-drawer-container>
+
