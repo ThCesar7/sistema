@@ -4,14 +4,14 @@
       <p class="titulo">Novo Funcionário</p>
 
       <div class="form-field">
-        <label class="form-field__label" for="valor">Nome</label>
-        <input class="form-field__input" id="valor" type="text" name="valor" [(ngModel)]="valorInput">
+        <label class="form-field__label" for="nome">Nome</label>
+        <input class="form-field__input" id="nome" type="text" name="nome" [(ngModel)]="valorInput">
 
-        <label class="form-field__label" for="destino">Cargo</label>
-        <input class="form-field__input" id="destino" type="text" name="destino" [(ngModel)]="destinoInput"/>
+        <label class="form-field__label" for="funcao">função</label>
+        <input class="form-field__input" id="funcao" type="text" name="funcao" [(ngModel)]="funcaoInput"/>
 
-        <label class="form-field__label" for="destino">Salário</label>
-        <input class="form-field__input" id="destino" type="text" name="destino" [(ngModel)]="salarioInput"/>
+        <label class="form-field__label" for="perfil">Perfil</label>
+        <input class="form-field__input" id="perfil" type="text" name="perfil" [(ngModel)]="perfilInput"/>
 
         <button class="btn btn-dark" type="submit">Incluir</button>
       </div>
@@ -22,8 +22,8 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
-          <th scope="col">Cargo</th>
-          <th scope="col">Salário</th>
+          <th scope="col">Função</th>
+          <th scope="col">Perfil</th>
           <th scope="col">Ação</th>
         </tr>
       </thead>

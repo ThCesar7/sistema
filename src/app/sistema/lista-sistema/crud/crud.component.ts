@@ -10,18 +10,18 @@ export class CrudComponent {
   @Output() aoTransferir = new EventEmitter<any>();
 
   valorInput!: string;
-  destinoInput!: number;
-  salarioInput!: number;
+  funcaoInput!: string;
+  perfilInput!: string;
 
   transferir() {
-    const valorEmitir = { valor: this.valorInput, destino: this.destinoInput };
+    const valorEmitir = { nome: this.valorInput, funcao: this.funcaoInput, perfil: this.perfilInput  };
     this.aoTransferir.emit(valorEmitir);
     this.limparCampo();
   }
 
   limparCampo() {
     this.valorInput = '';
-    this.destinoInput = 0;
-    this.salarioInput = 0;
+    this.funcaoInput = '';
+    this.perfilInput = '';
   }
 }

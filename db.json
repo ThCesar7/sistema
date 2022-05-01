@@ -1,5 +1,14 @@
 {
-  "cursos": [
-    { "id": 1,  "nome da variável": "Angular" }
+  "funcionarios": [
+    { "id": 1,
+      "nome": "Th",
+      "funcao": "Programador",
+      "Perfil": "ADM"
+    },
+    { "id": 2,
+      "nome": "Jhony",
+      "funcao": "Programador",
+      "Perfil": "ADM"
+    }
 ]
 }
