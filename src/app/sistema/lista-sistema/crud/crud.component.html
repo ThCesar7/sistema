@@ -1,46 +1,73 @@
 <div class="centralizar">
   <section class="container">
-    <form class="formulario" (ngSubmit)="transferir()">
+    <form class="formulario" [formGroup]="form">
       <p class="titulo">Novo Funcionário</p>
 
       <div class="form-field">
-        <label class="form-field__label" for="nome">Nome</label>
-        <input class="form-field__input" id="nome" type="text" name="nome" [(ngModel)]="valorInput">
+        <label for="nome"
+          >Nome<input
+            class="form-control"
+            formControlName="nome"
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && hasError('nome') }"
+        /></label>
 
-        <label class="form-field__label" for="funcao">função</label>
-        <input class="form-field__input" id="funcao" type="text" name="funcao" [(ngModel)]="funcaoInput"/>
+        <label for="funcao"
+          >função<input
+            class="form-control"
+            formControlName="funcao"
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && hasError('funcao') }"
+        /></label>
 
-        <label class="form-field__label" for="perfil">Perfil</label>
-        <input class="form-field__input" id="perfil" type="text" name="perfil" [(ngModel)]="perfilInput"/>
+        <label for="perfil"
+          >Perfil<input
+            class="form-control"
+            formControlName="perfil"
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && hasError('perfil') }"
+        /></label>
 
-        <button class="btn btn-dark" type="submit">Incluir</button>
+        <button
+          class="btn btn-dark"
+          style="width: 120px"
+          type="submit"
+          (click)="onSubmit()"
+        >
+          Incluir
+        </button>
       </div>
     </form>
-
-    <table class="table table-dark" style="margin-top: 15px;">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Função</th>
-          <th scope="col">Perfil</th>
-          <th scope="col">Ação</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <span class="float-right">
-              <button class="btn btn-outline-warning mb-1 btn-sm">Atualizar</button>
-              <button class="btn btn-outline-danger mb-1 btn-sm">Remover</button>
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <aside>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Função</th>
+            <th scope="col">Perfil</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Funcionario of funcionarios$ | async">
+            <td>{{ Funcionario.id }}</td>
+            <td>{{ Funcionario.nome }}</td>
+            <td>{{ Funcionario.funcao }}</td>
+            <td>{{ Funcionario.perfil }}</td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-warning mb-1 btn-sm">
+                  Atualizar
+                </button>
+                <button class="btn btn-outline-danger mb-1 btn-sm">
+                  Remover
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </aside>
   </section>
 </div>

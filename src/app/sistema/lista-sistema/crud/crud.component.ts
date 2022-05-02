@@ -1,27 +1,59 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Funcionario } from './crud';
+import { CrudService } from './crud.service';
 
 @Component({
   selector: 'app-crud',
   templateUrl: './crud.component.html',
   styleUrls: ['./crud.component.scss'],
 })
-export class CrudComponent {
+export class CrudComponent implements OnInit {
 
-  @Output() aoTransferir = new EventEmitter<any>();
+  form!: FormGroup;
 
-  valorInput!: string;
-  funcaoInput!: string;
-  perfilInput!: string;
+  submitted!: false | boolean;
 
-  transferir() {
-    const valorEmitir = { nome: this.valorInput, funcao: this.funcaoInput, perfil: this.perfilInput  };
-    this.aoTransferir.emit(valorEmitir);
-    this.limparCampo();
-  }
+  funcionarios!: Funcionario[]
+
+  funcionarios$!: Observable<Funcionario[]>;
+
+ constructor(private service: CrudService,
+             private bf: FormBuilder) {}
 
   limparCampo() {
-    this.valorInput = '';
-    this.funcaoInput = '';
-    this.perfilInput = '';
+    //this.valorInput = '';
+   // this.funcaoInput = '';
+    //this.perfilInput = '';
+  }
+
+  ngOnInit() {
+    //this.service.list()
+    //.subscribe(dados => this.funcionarios = dados);
+    this.funcionarios$ = this.service.list();
+
+    this.form = this.bf.group({
+      nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      funcao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      perfil: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]]
+    });
+  }
+
+  hasError(field: string){
+    return this.form.get(field)?.errors;
+  }
+
+  onSubmit(){
+    this.submitted = true;
+    console.log(this.form.value)
+    if (this.form.valid){
+      this.service.create(this.form.value)
+      .subscribe(
+        success => console.log('sucesso'),
+        error => console.error(error),
+        () => console.log('request complete')
+      );
+    }
   }
 }

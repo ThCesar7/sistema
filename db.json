@@ -1,14 +1,16 @@
 {
   "funcionarios": [
-    { "id": 1,
+    {
+      "id": 1,
       "nome": "Th",
       "funcao": "Programador",
-      "Perfil": "ADM"
+      "perfil": "ADM"
     },
-    { "id": 2,
+    {
+      "id": 2,
       "nome": "Jhony",
       "funcao": "Programador",
-      "Perfil": "ADM"
+      "perfil": "ADM"
     }
-]
+  ]
 }

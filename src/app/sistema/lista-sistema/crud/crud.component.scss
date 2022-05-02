@@ -30,3 +30,19 @@
 .form-field__label, .btn {
   margin: 5px 5px 10px 5px;
 }
+
+.form-control{
+  width: 200px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+aside{
+  margin-left: 32px;
+  width: 95%;
+  height: 250px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 15px;
+}
+
