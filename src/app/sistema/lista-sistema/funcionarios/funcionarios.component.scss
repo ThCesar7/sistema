@@ -4,7 +4,7 @@
 
 .container{
   height: 400px;
-  width: 350px;
+  width: 850px;
   border-radius: 30px;
   background-color: rgb(255, 255, 255);
   text-align: center;
@@ -35,5 +35,14 @@
   width: 200px;
   text-align: center;
   margin-left: 20px;
+}
+
+aside{
+  margin-left: 32px;
+  width: 95%;
+  height: 250px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 15px;
 }
 

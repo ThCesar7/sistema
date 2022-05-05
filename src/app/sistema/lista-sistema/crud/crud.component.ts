@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Funcionario } from './crud';
 import { CrudService } from './crud.service';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crud',
@@ -15,24 +17,12 @@ export class CrudComponent implements OnInit {
 
   submitted!: false | boolean;
 
-  funcionarios!: Funcionario[]
-
-  funcionarios$!: Observable<Funcionario[]>;
-
  constructor(private service: CrudService,
-             private bf: FormBuilder) {}
+             private bf: FormBuilder,
+             private router: Router,
+             private location: Location ) {}
 
-  limparCampo() {
-    //this.valorInput = '';
-   // this.funcaoInput = '';
-    //this.perfilInput = '';
-  }
-
-  ngOnInit() {
-    //this.service.list()
-    //.subscribe(dados => this.funcionarios = dados);
-    this.funcionarios$ = this.service.list();
-
+    ngOnInit() {
     this.form = this.bf.group({
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       funcao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
@@ -49,11 +39,13 @@ export class CrudComponent implements OnInit {
     console.log(this.form.value)
     if (this.form.valid){
       this.service.create(this.form.value)
-      .subscribe(
-        success => console.log('sucesso'),
-        error => console.error(error),
-        () => console.log('request complete')
-      );
+      .subscribe((success)  => {
+        this.location.back();
+        //this.router.navigate(['app-extrato'])
+        alert('Cadastrado com sucesso');
+      }, (error) => console.error(error),
+      () => console.log('request complete')
+      )
     }
   }
 }

@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { CrudComponent } from './lista-sistema/crud/crud.component';
 import { TransferenciasComponent } from './lista-sistema/transferencias/transferencias.component';
 import { ExtratoComponent } from './lista-sistema/extrato/extrato.component';
+import { FuncionariosComponent } from './lista-sistema/funcionarios/funcionarios.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ExtratoComponent } from './lista-sistema/extrato/extrato.component';
     RootNavComponent,
     CrudComponent,
     TransferenciasComponent,
-    ExtratoComponent
+    ExtratoComponent,
+    FuncionariosComponent
   ],
   imports: [
     CommonModule,

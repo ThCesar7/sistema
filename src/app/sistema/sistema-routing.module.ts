@@ -1,3 +1,4 @@
+import { FuncionariosComponent } from './lista-sistema/funcionarios/funcionarios.component';
 import { ExtratoComponent } from './lista-sistema/extrato/extrato.component';
 import { TransferenciasComponent } from './lista-sistema/transferencias/transferencias.component';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,10 @@ const routes: Routes = [
         path: 'app-extrato',
         component: ExtratoComponent,
       },
+      {
+        path: 'funcionarios',
+        component: FuncionariosComponent,
+      }
 
     ],
   }
