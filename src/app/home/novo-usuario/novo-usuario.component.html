@@ -35,6 +35,10 @@
         novoUsuarioForm.get('userName')?.errors?.['required'] &&
         novoUsuarioForm.get('userName')?.touched"
         mensagem="Nome obrigatório"></app-mensagem>
+        <app-mensagem
+        *ngIf="novoUsuarioForm.get('userName')?.errors?.['usuarioExistente']"
+        mensagem="Usuário já existe">
+        </app-mensagem>
         </div>
         <div class="form-group">
             <input placeholder="Senha"
@@ -47,6 +51,6 @@
         mensagem="Nome obrigatório"></app-mensagem>
         </div><br>
         <button type="submit" class="btn">Cadastrar</button>
-        <a class="registre" [routerLink]="['']">Logar</a>
+        <a class="registre" [routerLink]="['']">Logar</a><br>
     </form>
 </div>

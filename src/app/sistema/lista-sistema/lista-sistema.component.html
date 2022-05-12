@@ -2,8 +2,11 @@
 
   <div>Sistemas</div>
   <div class="barra">
-   <div class="icone"><i class="fa fa-user-circle-o fa-1x" aria-hidden="true"></i></div>
-    <div>Usuário:</div>
+    <div class="icone"><i class="fa fa-user-circle-o fa-1x" aria-hidden="true"></i></div>
+    <div *ngIf="user$ | async as user">
+     <p>Usuario: {{user.name}}</p>
+    </div>
+    <button (click)="logout()" class="logout">deslogar</button>
   </div>
 
 </mat-toolbar>

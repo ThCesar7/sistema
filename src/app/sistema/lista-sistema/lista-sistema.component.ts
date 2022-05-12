@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { UsuarioService } from './../../autenticacao/usuario/usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -6,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './lista-sistema.component.html',
   styleUrls: ['./lista-sistema.component.scss']
 })
-export class ListaSistemaComponent implements OnInit {
+export class ListaSistemaComponent {
 
-  constructor() { }
+  user$ = this.usuarioService.retornaUsuario();
 
-  ngOnInit(): void {
-  }
+  constructor(private usuarioService:UsuarioService,
+    private router: Router) { }
 
+    logout(){
+      this.usuarioService.logout();
+      this.router.navigate(['']);
+    }
 }
