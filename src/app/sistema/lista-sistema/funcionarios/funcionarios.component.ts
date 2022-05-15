@@ -4,7 +4,7 @@ import { Funcionario } from './Funcionario';
 import { FuncionariosService } from './funcionarios.service';
 
 @Component({
-  selector: 'app-funcionarios',
+  selector: 'funcionarios',
   templateUrl: './funcionarios.component.html',
   styleUrls: ['./funcionarios.component.scss']
 })
@@ -17,6 +17,7 @@ export class FuncionariosComponent implements OnInit {
   constructor(private service: FuncionariosService) { }
 
   ngOnInit(): void {
+    this.service.list().subscribe(console.log)
     this.funcionarios$ = this.service.list();
   }
 

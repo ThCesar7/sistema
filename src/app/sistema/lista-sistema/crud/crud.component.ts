@@ -19,7 +19,7 @@ export class CrudComponent implements OnInit {
 
  constructor(private service: CrudService,
              private bf: FormBuilder,
-             private router: Router,
+             private _router: Router,
              private location: Location ) {}
 
     ngOnInit() {
@@ -40,8 +40,7 @@ export class CrudComponent implements OnInit {
     if (this.form.valid){
       this.service.create(this.form.value)
       .subscribe((success)  => {
-        this.location.back();
-        //this.router.navigate(['app-extrato'])
+        this._router.navigateByUrl('sistema/funcionarios')
         alert('Cadastrado com sucesso');
       }, (error) => console.error(error),
       () => console.log('request complete')

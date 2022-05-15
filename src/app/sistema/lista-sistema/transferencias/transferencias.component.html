@@ -1,16 +1,35 @@
 <div class="centralizar">
   <section class="container">
-    <form class="formulario" (ngSubmit)="transferir()">
-      <p class="titulo">Nova Transferência</p>
+    <form class="formulario" [formGroup]="form"><br>
+      <p class="titulo">Cadastrar nova Transferência</p>
 
       <div class="form-field">
-        <label class="form-field__label" for="valor">Valor</label>
-        <input class="form-field__input" id="valor" type="text" name="valor" [(ngModel)]="valorInput">
 
-        <label class="form-field__label" for="destino">Destino</label>
-        <input class="form-field__input" id="destino" type="text" name="destino" [(ngModel)]="destinoInput"/>
+        <label for="destino"
+          >Destino<input
+            class="form-control"
+            formControlName="destino"
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && hasError('destino') }"
+        /></label><br><br>
 
-        <button class="btn btn-dark" type="submit">Transferir</button>
+
+        <label for="valor"
+          >Valor<input
+            class="form-control"
+            formControlName="valor"
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && hasError('valor') }"
+        /></label><br><br>
+
+        <button
+          class="btn btn-dark botaocad"
+          style="width: 120px"
+          type="submit"
+          (click)="onSubmit()"
+        >
+          Incluir
+        </button>
       </div>
     </form>
   </section>
