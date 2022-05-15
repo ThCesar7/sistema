@@ -20,5 +20,19 @@
       "destino": "14.00.18",
       "data": "10/05/2022"
     }
+  ],
+  "users": [
+    {
+      "id": 3,
+      "userName": "th",
+      "email": "th@gmail.com",
+      "password": 123,
+      "name": "thiago"
+    },
+    {
+      "userName": "th",
+      "password": "123",
+      "id": 4
+    }
   ]
 }
