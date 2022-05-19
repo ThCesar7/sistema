@@ -16,6 +16,10 @@ const routes: Routes = [
         component: CrudComponent,
       },
       {
+        path: 'app-crud/:id',
+        component: CrudComponent,
+      },
+      {
         path: 'app-transferencias',
         component: TransferenciasComponent,
       },

@@ -4,7 +4,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Funcionario } from './crud';
 import { CrudService } from './crud.service';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-crud',
@@ -20,10 +20,14 @@ export class CrudComponent implements OnInit {
  constructor(private service: CrudService,
              private bf: FormBuilder,
              private _router: Router,
-             private location: Location ) {}
+             private location: Location,
+             private route: ActivatedRoute
+  ) {}
 
     ngOnInit() {
+
     this.form = this.bf.group({
+      id: [null],
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       funcao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       perfil: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]]

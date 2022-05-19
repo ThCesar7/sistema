@@ -18,8 +18,16 @@
           >Valor<input
             class="form-control"
             formControlName="valor"
-            type="text"
+            type="number"
             [ngClass]="{ 'is-invalid': submitted && hasError('valor') }"
+        /></label><br><br>
+
+        <label for="data"
+          >Valor<input
+            class="form-control"
+            formControlName="data"
+            type="datetime-local"
+            [ngClass]="{ 'is-invalid': submitted && hasError('data') }"
         /></label><br><br>
 
         <button

@@ -15,10 +15,10 @@
         </thead>
         <tbody>
           <tr *ngFor="let t of transferencias$ | async">
-            <td>{{ t.id }}</td>
-            <td>{{ t.valor }}</td>
-            <td>{{ t.destino }}</td>
-            <td>{{ t.data }}</td>
+            <td>{{ t?.id }}</td>
+            <td>{{ t?.valor | currency}}</td>
+            <td>{{ t?.destino }}</td>
+            <td>{{ t?.data | date: 'short' }}</td>
           </tr>
         </tbody>
       </table>

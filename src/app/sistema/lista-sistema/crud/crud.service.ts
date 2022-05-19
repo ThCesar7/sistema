@@ -15,4 +15,5 @@ export class CrudService {
   create(Funcionario: any){
     return this.http.post(this.API, Funcionario).pipe(take(1));
   }
+
 }

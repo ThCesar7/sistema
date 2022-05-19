@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Funcionario } from './Funcionario';
@@ -14,11 +15,16 @@ export class FuncionariosComponent implements OnInit {
 
   funcionarios$!: Observable<Funcionario[]>;
 
-  constructor(private service: FuncionariosService) { }
+  constructor(private service: FuncionariosService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.service.list().subscribe(console.log)
     this.funcionarios$ = this.service.list();
   }
 
+  onDelete(funcionario$: any){
+
+  }
 }

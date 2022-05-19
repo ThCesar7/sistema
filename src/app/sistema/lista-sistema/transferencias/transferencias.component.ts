@@ -17,6 +17,7 @@ export class TransferenciasComponent  {
   submitted!: false | boolean;
   valor!: number;
   destino!: number;
+  data!: Date;
 
   constructor(private service: TransferenciaService,
     private bf: FormBuilder,
@@ -26,7 +27,8 @@ export class TransferenciasComponent  {
   ngOnInit() {
     this.form = this.bf.group({
       destino: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-      valor: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]]
+      valor: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+      data: [null, [Validators.required]]
     });
   }
 
@@ -35,7 +37,7 @@ export class TransferenciasComponent  {
   }
 
   transferir() {
-    const valorEmitir = { valor: this.valor, destino: this.destino };
+    const valorEmitir = { valor: this.valor, destino: this.destino, data: this.data};
     this.aoTransferir.emit(valorEmitir);
   }
 
